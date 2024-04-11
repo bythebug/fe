@@ -1,9 +1,32 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+import PrivacyPolicy from './PrivacyPolicy';
+
 
 
 function LoginScreen(props) {
+
+    const navigation = useNavigation();
+
+    const goToPrivacyPolicy = () => {
+        navigation.navigate('PrivacyPolicy'); // Navigate to the PrivacyPolicy
+      }
+
+      const goToForgetPassword = () => {
+        navigation.navigate('Reset'); // Navigate to the Reset
+      };
+
+      const goToCardNFC = () => {
+        navigation.navigate('CardNFC'); // Navigate to the Welcome
+      }
+
+      const goToWelcome = () => {
+        navigation.navigate('Welcome'); // Navigate to the Welcome
+      }
+
+
     return (
         <View style={styles.container}>
 
@@ -24,17 +47,17 @@ function LoginScreen(props) {
             </View>
 
             <View>
-                <Button style={styles.button} mode="contained" onPress={() => console.log('Register Pressed')}>
+                <Button style={styles.button} mode="contained" onPress={goToCardNFC}>
                     Login
                 </Button>
             </View>
 
             <View>
-                <Text style={styles.forgetPassword} onPress={() => console.log('Forgot Password Pressed')}>Don't Have A Account?</Text>
+                <Text style={styles.forgetPassword} onPress={goToWelcome}>Don't Have A Account?</Text>
             </View>
 
             <View>
-                <Text style={styles.privacy} onPress={() => console.log('Privacy Pressed')}>Privacy Policy</Text>
+                <Text style={styles.privacy} onPress={goToPrivacyPolicy}>Privacy Policy</Text>
             </View>
 
 

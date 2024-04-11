@@ -2,6 +2,8 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 
+
+
 function Reset(props) {
     return (
         <View style={styles.container}>
@@ -18,15 +20,17 @@ function Reset(props) {
                 <TextInput label="Enter Recovery Key" mode='outlined'> </TextInput>
             </View>
 
+
+            <View style={styles.InputView}>
+                <TextInput label="Set New Password" mode='outlined'> </TextInput>
+            </View>
+
+
             {/* // if password updated show here */}
             {/* <Text>Password Updated Successfully</Text> */}
 
             <View>
-            <Button style={styles.button} mode="contained" onPress={() => console.log('Recover Pressed')}> Recover Account </Button>
-            </View>
-
-            <View>
-                <Text style = {{margin:40}} variant="titleSmall" onPress={() => console.log('Register Pressed')}>Go Back</Text>
+            <Button style={styles.button} mode="contained" onPress={() => console.log('Go To WelcomePage Pressed')}> Recover Account </Button>
             </View>
 
         </View>
@@ -40,7 +44,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     Header: {
-        marginBottom: 150,
+        marginBottom: 100,
         alignItems: 'center',
     },
     InputView: {

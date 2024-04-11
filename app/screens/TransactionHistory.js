@@ -84,15 +84,7 @@ function TransactionHistory(props) {
                         selectPageDropdownLabel={'Rows per page'}
                     />
                 </DataTable>
-
             </View>
-
-            <View>
-                <Button style={styles.button} mode="contained" onPress={() => console.log('Register Pressed')}>
-                    Back
-                </Button>
-            </View>
-
         </View>
     );
 }

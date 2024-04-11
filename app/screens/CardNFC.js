@@ -1,9 +1,32 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { Button, Text, Chip } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 
 function CardNFC(props) {
+
+
+    const navigation = useNavigation();
+
+    const goToCardNFC = () => {
+        navigation.navigate('CardNFC'); // Navigate to the CardNFC screen
+      };
+
+      const goToForgetPassword = () => {
+        navigation.navigate('Reset'); // Navigate to the Reset
+      };
+
+      const goToPrivacyPolicy = () => {
+        navigation.navigate('PrivacyPolicy'); // Navigate to the PrivacyPolicy
+      }
+
+      const goToRecharge = () => {
+        navigation.navigate('Recharge'); // Navigate to the PrivacyPolicy
+      }
+
 
     const [checked, setChecked] = React.useState('first');
 
@@ -26,7 +49,7 @@ function CardNFC(props) {
             </View>
 
             <View>
-                <Button style={styles.button} mode="contained" onPress={() => console.log('Register Pressed')}>
+                <Button style={styles.button} mode="contained" onPress={goToRecharge}>
                     Recharge
                 </Button>
             </View>

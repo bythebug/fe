@@ -1,20 +1,37 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import {Button, Text, Chip } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 
 function Recharge(props) {
+
+    // Write Functions For All The Chips
+
+    const navigation = useNavigation();
+
+    const goToTransactionHistory = () => {
+        navigation.navigate('TransactionHistory'); // Navigate to the TransactionHistory screen
+      };
+
+    
 
     const [checked, setChecked] = React.useState('first');
 
     return (
         <View style={styles.container}>
             <View style={styles.Header}>
-                <Text variant="displayMedium">Recharge</Text>
+                <Text variant="displayMedium">Add Trips</Text>
+            </View>
+
+            <View>
+                <Button style={styles.button} mode="contained" onPress={goToTransactionHistory}>
+                    Transaction History
+                </Button>
             </View>
 
             <View style = {styles.OptionsSpacing}>
-                <Text variant='titleMedium'>Select Recharge Option</Text>
+                <Text variant='titleLarge'>Select Recharge Option</Text>
             </View>
 
             <View style={styles.chips}>
@@ -24,12 +41,7 @@ function Recharge(props) {
             <Chip style={styles.chips} icon="select" onPress={() => console.log('Monthly Pass @ $98.00 Pressed')}>Monthly Pass @ $98.00 </Chip>
             </View>
 
-
-            <View>
-                <Button style={styles.button} mode="contained" onPress={() => console.log('Register Pressed')}>
-                    Back
-                </Button>
-            </View>
+            
 
         </View>
     );
@@ -46,10 +58,10 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     OptionsSpacing:{
-        marginBottom: "20%",
+        marginTop: "15%",
+        marginBottom: "5%",
     },
     Header: {
-        marginBottom: 20,
         alignItems: 'center',
     },
     InputView: {
