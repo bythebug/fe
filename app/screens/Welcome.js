@@ -8,7 +8,7 @@ function Welcome(props) {
     const navigation = useNavigation();
 
     const goToCardNFC = () => {
-        registerUser("username", "password", "recoverySeedHash");
+        // registerUser("username", "password", "recoverySeedHash");
         navigation.navigate('CardNFC'); // Navigate to the CardNFC screen
       };
 

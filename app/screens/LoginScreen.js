@@ -3,28 +3,34 @@ import { View, StyleSheet } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import PrivacyPolicy from './PrivacyPolicy';
-
+import { useState } from 'react';
 
 
 function LoginScreen(props) {
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     const navigation = useNavigation();
 
     const goToPrivacyPolicy = () => {
         navigation.navigate('PrivacyPolicy'); // Navigate to the PrivacyPolicy
-      }
+    }
 
-      const goToForgetPassword = () => {
+    const goToForgetPassword = () => {
         navigation.navigate('Reset'); // Navigate to the Reset
-      };
+    };
 
-      const goToCardNFC = () => {
+    // Login Button Calls This Function
+    const goToCardNFC = () => {
+        console.log("Username:", username);
+        console.log("Password:", password);
         navigation.navigate('CardNFC'); // Navigate to the Welcome
-      }
+    }
 
-      const goToWelcome = () => {
+    const goToWelcome = () => {
         navigation.navigate('Welcome'); // Navigate to the Welcome
-      }
+    }
 
 
     return (
@@ -39,11 +45,11 @@ function LoginScreen(props) {
             </View>
 
             <View style={styles.InputView}>
-                <TextInput label="Enter Username" mode='outlined'> </TextInput>
+                <TextInput label="Enter Username" onChangeText={text => setUsername(text)} mode='outlined'> </TextInput>
             </View>
 
             <View style={styles.InputView}>
-                <TextInput label="Enter Password" mode='outlined'> </TextInput>
+                <TextInput label="Enter Password" onChangeText={text => setPassword(text)} secureTextEntry={true} style={styles.default} mode='outlined' > </TextInput>
             </View>
 
             <View>

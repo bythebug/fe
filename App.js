@@ -22,8 +22,6 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    // RETURNIGN NAVIGATION CONTAINER AND STACK NAVIGATOR
-
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Welcome" component={Welcome} />
@@ -37,25 +35,6 @@ const App = () => {
         <Stack.Screen name="TransactionStatus" component={TransactionStatus} />
       </Stack.Navigator>
     </NavigationContainer>
-
-    
-    // OLD RETURN FILE CODE.
-
-    // <PaperProvider>
-    //   <SafeAreaView style={styles.container}>
-    //     {/* <StatusBar style="auto" /> */}
-    //     {/* <Welcome /> */}
-    //     {/* <LoginScreen /> */}
-    //     {/* <Reset /> */}
-    //     {/* <Recharge /> */}
-    //     {/* <CardNFC />  */}
-    //     {/* <TransactionStatus /> */}
-    //     {/* <TransactionHistory /> */}
-    //     {/* <CardInfo /> */}
-    //     <AllRoutes />
-    //   </SafeAreaView>
-    // </PaperProvider>
-
   );
 };
 
